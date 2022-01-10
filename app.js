@@ -75,7 +75,7 @@ app.use((req,res,next)=>{
     next();
 })
 
-
+ 
 app.use('/',userroutes)
 app.use('/campgrounds', campgroundsroutes)
 app.use('/campgrounds/:id/reviews', reviewsroutes)
@@ -93,4 +93,5 @@ app.use((err, req, res, next) => {
 app.listen(3000, () => {
     console.log('Serving on port 3000')
 })
+
 

@@ -9,8 +9,14 @@ const { campgroundSchema } = require('../schemas.js');
 
 const campgrounds = require('../controllers/campgrounds')
 const multer = require('multer');
-const {storage}=require('../cloudinary')
+const {storage}=require('../cloudinary');
+const campground = require('../models/campground');
 const upload = multer({ storage})
+
+
+ 
+router.get('/:id/create-checkout-session',isloggedin,campgrounds.checkout);
+
 
 
  router.route('/')
@@ -18,6 +24,11 @@ const upload = multer({ storage})
     .post(  isloggedin, upload.array('image'), validateCampground,catchAsync(campgrounds.createCampground))
     
 router.get('/new', isloggedin, campgrounds.renderNewForm)
+ 
+ router.get('/paymentsuccessfull',(req,res)=>{
+    res.render('campgrounds/paymentsuccess')
+    
+ })
 
 router.route('/:id')
     .get(  catchAsync(campgrounds.showCampground))

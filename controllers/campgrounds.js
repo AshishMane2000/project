@@ -65,3 +65,29 @@ module.exports.deleteCampground = async (req, res) => {
     req.flash('success', 'Campground Deleted!')
     res.redirect('/campgrounds')
 }
+const stripe = require('stripe')('sk_test_51KGFPpSGSehivkjOtCNGwJePOzN0OCNxCPQfyI7NMf5JJFhvHevkxhPoDiBRg0oMMy0GeJy4ivLh4Az6phLgT10M00gUslTLx3')
+
+module.exports.checkout= async (req, res) => {
+    const result = await Campground.findById(req.params.id);
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        price_data: {
+          currency: 'INR',
+          product_data: {
+            name: result.title,
+             
+          },
+          unit_amount: result.price*100,
+        },
+        quantity:1
+      },
+    ],
+    mode: 'payment',
+    success_url: 'http://localhost:3000/campgrounds/paymentsuccessfull',
+    cancel_url: 'https://example.com/cancel',
+  });
+
+  res.redirect(303, session.url);
+//   res.send("successssssssssss");
+}
