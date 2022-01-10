@@ -16,12 +16,28 @@
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css' rel='stylesheet' />
 <link rel="stylesheet" href="/stylesheets/app.css">
 
+ <!-- Font -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Poppins&display=swap" rel="stylesheet">
 
+ <!-- Font awesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
+<style>
+  .popins{
+     
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            z-index: 0;
+        
+  }
+</style>
 </head>
 
-<body class="d-flex flex-column vh-100">
+<body class=" popins d-flex flex-column vh-100">
   <%- include('../partials/navbar') %>
     <main class="container mt-5">
       <%- include('../partials/flash') %>

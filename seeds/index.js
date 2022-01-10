@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const cities = require('./cities')
+const cities = require('./indiancities')
 const { places, descriptors } = require('./seedHelpers')
 const Campground = require('../models/campground');
 
@@ -19,13 +19,13 @@ const sample = array => array[Math.floor(Math.random() * array.length)];
 const seedDB = async () => {
     await Campground.deleteMany({});
     for (let i = 0; i < 200; i++) {
-        const random1000 = Math.floor(Math.random() * 1000)
+        const random1000 = Math.floor(Math.random() * 100)
         const price = Math.floor(Math.random() * 20) + 10;
         const camp = new Campground({
             author: '619129724c8ed6fd3b597806',
             location: `${cities[random1000].city},${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            description: ' this is our basic project which inclues the create,read,update and delete operations',
+            description: ' This is one of the major tourist attractions of the city. Known for its art objects and sculptures made of urban and industrial waste such as broken frames, cutlery, bangles, auto parts etc., the Rock Garden is an epitome of innovation and creativity. Take idle strolls in the pathways, appreciating the artwork or enjoy a boat ride on a small man-made lake inside the gardens.',
             price,
             geometry: {
                 type: "Point",
