@@ -38,7 +38,7 @@ module.exports.places = [
     'Monsoon',
     'Friends Park',
     'Desert',
-    'Baug',
+    'Beach',
     'Hunting valley',
     'Reverse Waterfall',
     'Springs'
