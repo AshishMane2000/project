@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate')%>
+ 
+    <div class="row mt-2 ">
+         
+        <div class="col-md-6 offset-3">
+            <div class="  card-body">
+                <h3 class="card-title text-center"><b>Contact</b></h3>
+                <form action="/campgrounds/contact" method="POST" class="validated-form" novalidate>
+                    <div class="mb-3 mt-3">
+                        <label class="form-label mb-3" for="username">  Username</label>
+                        <input class="form-control    " type="text" id="username" name="username" autofocus
+                            required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label mb-3" for="email">  email</label>
+                        <input class="form-control " type="email" id="email" name="email" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-4 form-group">
+                        <label for="exampleFormControlTextarea1">Message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"name="message" rows="3"required></textarea>
+                      </div>
+
+                    <div class="d-grid gap-2 ">
+                        <button class=" mt-3 btn btn-lg btn-dark rounded-pill shadow"><i class="fas fa-fire-alt"></i> Contact </button>
+
+                    </div>
+                    
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+ 

@@ -7,10 +7,10 @@
     
     <% for (let campground of campgrounds){ %>
         <div class="card mb-3">
-            <div class="row ">
+            <div class="row bg-light">
                 <div class="col-md-4">
                     <% if (campground.image.length){%>
-                        <img class="img-fluid mt-2 ms-3 mb-2 rounded " src="<%=campground.image[0].url%> " alt="">
+                        <img class="img-fluid  rounded " src="<%=campground.image[0].url%> " alt="">
                         <% }else{ %>
                             <img class="img-fluid  rounded "
                                 src="https://res.cloudinary.com/dxhcqc4kz/image/upload/v1637457098/YelpCamp/wq7tgpa57q3e1dcatsiu.jpg"
@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-md-7">
                     <div class="card-body">
-                        <h5 class="card-title text-danger    ">
+                        <h5 class="card-title   ">
                             <%=campground.title%>
                         </h5>
                         <!-- <h2><%=campground.properties.popupMarkup%> </h2> -->

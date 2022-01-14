@@ -10,7 +10,7 @@ module.exports.register=async (req, res, next) => {
         const registereduser = await User.register(user, password)
         req.login(registereduser, err => {
             if (err) return next(err);
-            req.flash('success', 'welcome to yelp')
+            req.flash('success', 'Welcome to YelpCamp')
             res.redirect('/campgrounds')
         })
     }
@@ -24,7 +24,7 @@ module.exports.renderLogin=(req, res) => {
     res.render('users/login')
 };
 module.exports.login=(req, res) => {
-    req.flash('success', 'welcome back')
+    req.flash('success', `welcome back `)
    const redirecturl= req.session.returnTo || '/campgrounds'
    delete req.session.returnTo;
     res.redirect(redirecturl)

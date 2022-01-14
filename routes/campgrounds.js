@@ -13,8 +13,7 @@ const {storage}=require('../cloudinary');
 const campground = require('../models/campground');
 const upload = multer({ storage})
 
-
- 
+  
 router.get('/:id/create-checkout-session',isloggedin,campgrounds.checkout);
 
 
@@ -28,6 +27,11 @@ router.get('/new', isloggedin, campgrounds.renderNewForm)
  router.get('/paymentsuccessfull',(req,res)=>{
     res.render('campgrounds/paymentsuccess')
     
+ })
+ router.post('/search',async(req,res)=>{
+     const searchterm = req.body.search;
+      const campgrounds = await Campground.find( {title: {$regex: searchterm, $options: "i"} })
+     res.render('campgrounds/showsearched', {campgrounds, searchterm})
  })
 
 router.route('/:id')
