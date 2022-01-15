@@ -24,13 +24,32 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
 
-        <a class="nav-link   ms-3" href="/campgrounds">Campgrounds</a>
-        <a class="nav-link " href="/campgrounds/new">New Campground</a>
+        <a class="nav-link   ms-3" href="/campgrounds">Camps</a>
+        <a class="nav-link " href="/campgrounds/new">New Camp </a>
+        
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark text-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="/campgrounds/categories/hill station">hill station</a></li>
+                <li><a class="dropdown-item" href="/campgrounds/categories/Adventure">Adventure</a></li>
+                <li><a class="dropdown-item" href="/campgrounds/categories/Survivalist">Survivalist</a></li>
+                <li><a class="dropdown-item" href="/campgrounds/categories/Historical place">Historical place</a></li>
+                <li><a class="dropdown-item" href="/campgrounds/categories/Holiday Camping">Holiday Camping</a></li>
+                <li><a class="dropdown-item" href="/campgrounds/categories/Tent Camping">Tent Camping</a></li>
+                <li><a class="dropdown-item" href="/campgrounds/categories/Jungle Safari">Jungle Safari</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="navbar-nav ms-auto">
-        <form class="d-flex" action="/campgrounds/search"method="post">
-          <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search" required>
-          <button class="btn btn-outline-warning" type="submit">  Search</button>
+        <form class="d-flex me-3" action="/campgrounds/search"method="post">
+          <input class="form-control me-2  px-5 text-center" type="search" name="search" placeholder="Enter camp name" aria-label="Search" required>
+          <button class="btn btn-outline-warning" type="submit">  search</button>
           
         </form>
         <% if(!currentUser){ %>

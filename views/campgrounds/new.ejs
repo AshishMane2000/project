@@ -15,11 +15,27 @@
                     <div class="valid-feedback">Looks Good!</div>
 
                 </div>
+                <!-- <div class="mb-3">
+                    <label class="form-label" for="category"><b>category</b></label>
+                    <input class="form-control  shadow-sm" type="text" id="category" name=campground[category] required>
+                    <div class="valid-feedback">Looks Good!</div>
+
+                </div> -->
+                <select class="my-4 form-select shadow-sm mb-2"name="campground[category]" aria-label="Default select example">
+                    <option selected><b>Select Category</b></option>
+                    <option value="hill station">Hill Station</option>
+                    <option value="Jungle Safari">Jungle Safari</option>
+                    <option value="Tent Camping"> Tent Camping</option>
+                    <option value="Holiday Camping"> Holiday Camping</option>
+                    <option value="Historical place"> Historical place</option>
+                    <option value="Historical placeSurvivalist"> Historical placeSurvivalist</option>
+                    <option value="Adventure"> Adventure</option>
+                  </select>
 
                 
                
                
-                <div class="mb-3">
+                <div class="mb-3 mt-3">
                     <label class="form-label" for="price"><b>Campground Price</b></label>
                     <div class="input-group">
                         <span class="input-group-text" id="price-label">$</span>

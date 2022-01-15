@@ -24,6 +24,17 @@
 
                 </div>
 
+                <label for="category"><b>Category</b></label>
+                <select class="form-select shadow-sm  mt-2 mb-2"name="campground[category]" aria-label="Default select example">
+                    <option ><b>Select Category</b></option>
+                    <option  <%if(campground.category=="hill station" ){ %> selected <% } %> value="hill station">Hill Station</option>
+                    <option  <%if(campground.category=="Jungle Sagari" ){ %> selected <% } %> value="Jungle Safari"> Jungle Safari</option>
+                    <option  <%if(campground.category=="Tent camping" ){ %> selected <% } %> value="Tent Camping"> Tent Camping</option>
+                    <option  <%if(campground.category=="Holiday camping" ){ %> selected <% } %> value="Holiday Camping"> Holiday Camping</option>
+                    <option   <%if(campground.category=="Historical place" ){ %> selected <% } %> value="Historical place"> Historical place</option>
+                    <option  <%if(campground.category=="Survivalist" ){ %> selected <% } %> value=" Survivalist"> Survivalist</option>
+                    <option  <%if(campground.category=="Adventure" ){ %> selected <% } %> value="Adventure"> Adventure</option>
+                  </select>
 
 
 

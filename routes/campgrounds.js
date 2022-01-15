@@ -41,4 +41,11 @@ router.route('/:id')
   
 router.get('/:id/edit', isloggedin, isAuthor, catchAsync(campgrounds.renderEditForm))
 
+//categories routes
+router.get('/categories/:abcd',async(req,res)=>{
+    const category =req.params.abcd;
+     const cat =await Campground.find({category:category})
+     res.render('campgrounds/category',{category,cat});
+})
+
 module.exports = router;

@@ -30,7 +30,7 @@ const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
     center:  campground.geometry.coordinates, // starting position [lng, lat]
-    zoom: 5 // starting zoom
+    zoom: 6 // starting zoom
 });
 map.addControl(new mapboxgl.NavigationControl());
 

@@ -5,6 +5,7 @@ module.exports.campgroundSchema = Joi.object({
     //this is not mongoose schema its joi schema to validate
     campground: Joi.object({
         title: Joi.string().required(),
+        category:Joi.string(),
         price: Joi.number().required().min(0),
         // image: Joi.string().required(),
         location: Joi.string().required(),

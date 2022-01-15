@@ -43,3 +43,22 @@ module.exports.places = [
     'Reverse Waterfall',
     'Springs'
 ]
+
+module.exports.categories=[
+    'hill station',
+    'Adventure',
+    'Survivalist',
+    'Historical place',
+    'Holiday Camping',
+    'Tent Camping',
+    'Jungle Safari',
+    'hill station',
+    'Adventure',
+    'Survivalist',
+    'Historical place',
+    'Holiday Camping',
+    'Tent Camping',
+    'Jungle Safari'
+     
+    
+]

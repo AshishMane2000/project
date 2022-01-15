@@ -2,14 +2,14 @@
 
 
   <!-- i added this file to make slider work -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
 <% layout('layouts/boilerplate') %>
     <link rel="stylesheet" href="/stylesheets/stars.css">
 
     <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-7 ">
             <!-- <div id='map' style='width: 400px; height: 300px;'></div> -->
           
 
@@ -36,23 +36,25 @@
             </div>
 
             <div class="card mb-3">
-                <div class="card-body">
+                <div class="card-body bg-light ">
                     <h5 class="card-title">
-                        <%=campground.title%>
+                       <b> <%=campground.title%></b>
                     </h5>
                     <p class="card-text">
                         <%=campground.description%>
                     </p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-muted">
+                    <li class="list-group-item bg-light text-muted">
                         <%=campground.location%>
                     </li>
-                    <li class="list-group-item ">Created by <%=campground.author.username%>
+                    <li class="list-group-item ">Created by <b><%=campground.author.username%></b>
+                    </li>
+                    <li class="list-group-item ">featured in <b><%=campground.category%></b>
                     </li>
                     <li class="list-group-item"> &#8377;  <%=campground.price%>/Day</li>
                 </ul>
-                <div class="card-body">
+                <div class="card-body bg-light">
                     <a class="btn btn-success text-light " href="/campgrounds/<%=campground._id%>/create-checkout-session">BOOK NOW</a>
                     <% if(currentUser && campground.author.equals(currentUser._id)){ %>
                         <a class="card-link btn btn-primary " href="/campgrounds/<%=campground._id%>/edit">UPDATE</a>
@@ -67,25 +69,20 @@
                             </form>
                             <% } %> 
                     </div>
-                        <div class="card-footer text-muted">
-                                <!-- <form action="/campgrounds/<%=campground._id%>/create-checkout-session" method="POST">
-                                <button class="btn btn-primary" type="submit">Checkout</button> -->
-                               
-                              <!-- </form> -->
-                        </div>
+                        
             </div>
 
         </div>
         <div class=" col-md-5">  <div id='map'></div>
             <% if(currentUser) {%>
 
-                <h2 class="mt-5">Leave a Review</h2>
+                <h4 class="mt-2"><b>Leave a Review</b></h4>
                 <form class="mb-3 mt-0 validated-form" novalidate action="/campgrounds/<%=campground._id%>/reviews"
                     method="post">
                     <div class="">
                         <div></div>
                         <fieldset class="starability-growRotate">
-                            <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1"
+                            <input type="radio" id="no-rate" class="input-no-rate " name="review[rating]" value="1"
                                 checked aria-label="No rating." />
                             <input type="radio" id="first-rate1" name="review[rating]" value="1" />
                             <label for="first-rate1" title="Terrible">1 star</label>
@@ -99,8 +96,8 @@
                             <label for="first-rate5" title="Amazing">5 stars</label>
                         </fieldset>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="body">Review</label>
+                    <div class="mb-3 "style="margin-top: -24px;" >
+                        <label class="form-label " for="body">Review</label>
                         <textarea class="form-control" name="review[body]" required id="body" cols="30"
                             rows="3"></textarea>
                         <div class="valid-feedback">Looks Good</div>
@@ -110,8 +107,8 @@
                 <% } %>
                     <% for(let review of campground.reviews) {%>
                         <div class="card mb-3 ">
-                            <div class="card-body">
-                                <h6 class="card-subtitle mb-2  ">By <%=review.author.username%>
+                            <div class="card-body bg-light">
+                                <h6 class="card-subtitle mb-2  "><b>By <%=review.author.username%></b>
                                 </h6>
 
                                 <p class="starability-result  "   data-rating="<%=review.rating%>">
